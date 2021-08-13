@@ -25,16 +25,16 @@ function TodoApp({ initialTodos = [] }) {
 
   /** update a todo with updatedTodo */
   function update(updatedTodo) {
-    let todo = { ...updatedTodo }; // makes a copy of the updated todo
     // map - if this is the todo that needs updating, then use the new copy and spread it out. If it's not the one you want to update, no need to spread it.
     setTodos((todos) => (todos.map(t => 
-      t.id === todo.id ? {...todo} : t ))); // 
+      t.id === updatedTodo.id ? {...updatedTodo} : t ))); // 
   }
 
   /** delete a todo by id */
   function remove(id) {
     // const todosCopy = [...todos];
-    setTodos(todos.filter(t => t.id !== id));
+    // todos => guarantees that updates won't be lost
+    setTodos(todos => todos.filter(t => t.id !== id));
   }
 
   return (

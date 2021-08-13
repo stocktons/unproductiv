@@ -32,12 +32,12 @@ function EditableTodo({ todo, update, remove }) {
   /** Edit form saved; toggle isEditing and update in ancestor. */
   function handleSave(formData) {
     //toggle back and call update()
-    
+
   }
 
   return (
     <div className="EditableTodo">
-      EITHER
+      EITHER - add a conditional: if editing (true), show todo form, else show todo
       <TodoForm />
       OR
       <div className="mb-3">
